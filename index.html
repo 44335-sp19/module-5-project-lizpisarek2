@@ -1,12 +1,90 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Module 5 Project</title>
-  </head>
-  <body>
-    
-	
-  </body>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="http://schema.org/Person">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Jeopardy</title>
+<meta name="description" content="An interactive Jeopardy game for your web browser." />
+<link rel="stylesheet" type="text/css" href="jeopardy.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="jeopardy.js"></script>
+<script type="text/javascript">
+var jeopardy;
+$(document).ready(function() {
+    var finalJeopardy = {
+        "category": "Final Jeopardy Category",
+        "question": "Which jQuery function is used to prevent code from running, before the document is finished loading?",
+        "answer": "What is $(document).ready()?"
+    };
+    var questions = [
+        {
+            "category": "JavaScript",
+            "questions": [
+                {
+                    "value": "100",
+                    "question" : "Inside which HTML element do we put the JavaScript?",
+                    "answer": "What is script?"
+                },
+                {
+                    "value": "200",
+                    "question": "The external JavaScript file must contain the script tag.",
+                    "answer": "What is false?"
+                },
+                {
+                    "value": "300",
+                    "question": "Which event occurs when the user clicks on an HTML element?",
+                    "answer": "What is onclick?"
+                }
+            ]
+        },
+        {
+            "category": "jQuery",
+            "questions": [
+                {
+                    "value": "100",
+                    "question": "What scripting language is jQuery written in?",
+                    "answer": "What is JavaScript?"
+                },
+                {
+                    "value": "200",
+                    "question": "Which sign does jQuery use as a shortcut for jQuery?",
+                    "answer": "What is $ sign?"
+                },
+                {
+                    "value": "300",
+                    "question": "jQuery works together with AJAX.",
+                    "answer": "What is true?"
+                }
+            ]
+        },
+        {
+            "category": "Bootstrap",
+            "questions": [
+                {
+                    "value": "100",
+                    "question": "Bootstrap 3 is mobile-first.",
+                    "answer": "What is true?"
+                },
+                {
+                    "value": "200",
+                    "question": "The Bootstrap grid system is based on how many columns?",
+                    "answer": "What is 12?"
+                },
+                {
+                    "value": "300",
+                    "question": "Which class is used to create a big box for calling extra attention?",
+                    "answer": "What is .jumbotron?"
+                }
+            ]
+        }
+    ];
+    jeopardy = new Jeopardy({
+        questions: questions,
+        finalJeopardy: finalJeopardy
+    });
+});
+</script>
+</body>
 </html>
